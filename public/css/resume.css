@@ -179,11 +179,7 @@ section.resume-section .resume-item .resume-date {
 }
 
 .bg-primary {
-<<<<<<< HEAD:public/css/resume.css
   background-color: #aa1d1d;
-=======
-  background-color: #aa1d1d !important;
->>>>>>> 0c2a6ee4f3b47b66624299a4291c3c2daa2403d4:css/resume.css
 }
 
 .text-primary {
@@ -206,9 +202,5 @@ a.nav-item{
 a.nav-item:hover{
   color: #fff;
   opacity: 1;
-<<<<<<< HEAD:public/css/resume.css
 }
 
-=======
-}
->>>>>>> 0c2a6ee4f3b47b66624299a4291c3c2daa2403d4:css/resume.css
