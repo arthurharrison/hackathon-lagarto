@@ -29,4 +29,8 @@
 
 $('#sobre').click(function () {
   $("#multiCollapseExample1").collapse("toggle");
+<<<<<<< HEAD:public/js/resume.js
 });
+=======
+});
+>>>>>>> 0c2a6ee4f3b47b66624299a4291c3c2daa2403d4:js/resume.js
