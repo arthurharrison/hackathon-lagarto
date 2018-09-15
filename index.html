@@ -24,7 +24,7 @@
   </head>
 
   <body id="page-top">
-
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Sistema de Apoio à Saúde</span>
@@ -58,6 +58,55 @@
         </ul>
       </div>
     </nav>
+
+    <div class="chatBox">
+      <div class="open">Chat
+      <div class="cBox">
+        <!--Batata-->
+        <br>
+        <div class='loginIn' id='loginIn'>
+          Converse conosco
+          <form id='infoLog'>
+            <input type='text' placeholder="Nome" class='frmGo' id='msgName' name="msgName"/>
+            <input type='text' placeholder="Cidade" class='frmGo' id='msgCid' name="msgCid"/>
+            <input type='text' placeholder="Posto de Saude" class='frmGo' id='msgPs' name="msgPs"/>
+            <button type="button" id='btnGo' value="Seguir">Seguir</button>
+          </form>
+
+        </div>
+        <div class='chatter' id='chatter'>
+          <div class='cHistory'></div>
+          <form id="chat">
+              <input type="text" placeholder="Digite Aqui" id="msg_text" name="msg_text" />
+              <input type="submit" value="Enviar" />
+          </form>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+      var socket = io.connect();
+      $("form#chat").submit(function(e) {
+          e.preventDefault();
+          socket.emit("send message",  $(this).find("#msg_text").val(), function() {
+              $("form#chat #msg_text").val("");
+          });
+      });
+
+      socket.on('chat message', function(msg){
+        //handle the message however you would like
+        $('.cHistory').append($('<p />').text(msg));
+
+      });
+
+      socket.on("update messages", function(msg){
+        var final_message = $("<p />").text(msg);
+        $(".cHistory").append(final_message);
+      });
+    </script>
 
     <div class="container-fluid p-0">
 
@@ -298,7 +347,7 @@
       };
       firebase.initializeApp(config);
     </script>
-    
+     <script src="js/screen.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
