@@ -6,6 +6,7 @@ const io = require('socket.io')(http);
 
 
 http.listen(3030);
+console.log("App is running in the port 3030...")
 
 // function response(req, res){
 //     let file = ""
