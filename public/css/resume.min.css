@@ -35,6 +35,8 @@
     border: 2px solid #eb5424;
     height: 270px;
     overflow-y: scroll;
+    font-family: Georgia, Tahoma, Arial, sans-serif;
+    color: black;
 }
 
 form {

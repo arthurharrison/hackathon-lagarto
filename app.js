@@ -45,12 +45,13 @@ app.get('/index', (req, res)=>{
 let nomeUs;
 app.post('/change', (req, res)=>{
   nomeUs = req.body.name;
-  res.send('batata');
+  setTimeout(()=>{console.log('teste')},2000);
+  //res.send('batata');
 });
 
 
 io.on("connection", (socket) => {
-  io.emit('chat message', ' a new user has joined');
+  io.emit('chat message', 'Olá '+ nomeUs + "! No que podemos te ajudar?");
 
   socket.on("send message", (sent_msg, callback) => {
       sent_msg = "[" + getCurrentDate() + "]: "+ nomeUs + '-' + sent_msg;
