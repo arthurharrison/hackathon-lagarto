@@ -26,3 +26,7 @@
   });
 
 })(jQuery); // End of use strict
+
+$('#sobre').click(function () {
+  $("#multiCollapseExample1").collapse("toggle");
+});
