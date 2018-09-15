@@ -12,7 +12,7 @@
     transition: height .6s ease-out;
     width: 300px;
     height: 0px;
-    background: red;
+    background: rgb(13, 147, 180);
     z-index: 9999;
   }
   .open:hover>.cBox{
@@ -26,3 +26,29 @@
       background: #673AB7;
       color: #eaeaea;
   }
+
+  .cHistory{
+    background: #FFF;
+    border: 2px solid #eb5424;
+    height: 270px;
+  }
+
+  form {
+    margin: 15px 0;
+   }
+   form input[type='text'] {
+    border: 2px solid #eb5424;
+    border-radius: 5px;
+    padding: 5px;
+    width: 67%;
+   }
+   form input[type='submit'] {
+    background: #eb5424;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px 5px;
+    width: 29%;
+   }
