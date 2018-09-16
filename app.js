@@ -46,13 +46,14 @@ app.get('/index', (req, res)=>{
 let nomeUs;
 app.post('/change', (req, res)=>{
   nomeUs = req.body.name;
-  setTimeout(()=>{console.log('teste')},2000);
-  //res.send('batata');
+  res.send('batata');
+ 
 });
 
 
 io.on("connection", (socket) => {
   io.emit('chat message', 'Olá '+ nomeUs + "! No que podemos te ajudar?");
+
 
   socket.on("send message", (sent_msg, callback) => {
       sent_msg = "[" + getCurrentDate() + "]: "+ nomeUs + '-' + sent_msg;
@@ -61,9 +62,11 @@ io.on("connection", (socket) => {
   });
 
   socket.on('disconnect', function() {
-        io.emit('chat message', 'some user disconnected');
-    });
+      io.emit('chat message', 'some user disconnected');
+  });
 });
+
+
 function getCurrentDate() {
     const currentDate = new Date();
     const hour = (currentDate.getHours() < 10 ? '0' : '') + currentDate.getHours();
