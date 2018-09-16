@@ -41,3 +41,7 @@ document.getElementById("btnGo").onclick = () => {
 
 }
 
+document.getElementById("submit").onclick = () => {
+  document.getElementById('scheduleT').style.display='table';
+}
+
