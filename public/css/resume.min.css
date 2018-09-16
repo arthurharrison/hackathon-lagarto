@@ -100,3 +100,6 @@ form input[type='submit'] {
     object-fit: cover;
     z-index: -30;
 }
+#scheduleT{
+    display:none;
+}
