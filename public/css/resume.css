@@ -207,3 +207,7 @@ a.nav-item:hover{
 #sideNav{
   background-color: #aa1d1d;
 }
+
+.point-cursor{
+  cursor: pointer;
+}
