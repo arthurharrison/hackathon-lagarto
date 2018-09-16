@@ -30,3 +30,18 @@
 $('#sobre').click(function () {
   $("#multiCollapseExample1").collapse("toggle");
 });
+
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyBzTsaZY-s979MNBvpazG32_iLhV3TwDh0",
+  authDomain: "sisas-1536888034262.firebaseapp.com",
+  databaseURL: "https://sisas-1536888034262.firebaseio.com",
+  projectId: "sisas-1536888034262",
+  storageBucket: "sisas-1536888034262.appspot.com",
+  messagingSenderId: "669334833240"
+};
+firebase.initializeApp(config);
+
+var d = new Date();
+var t = d.getTime();
+var counter = t;
