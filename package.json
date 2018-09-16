@@ -21,6 +21,9 @@
     "contributors": [
         "David Miller (http://davidmiller.io/)"
     ],
+    "scripts": {
+        "start": "node ./app.js"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/BlackrockDigital/startbootstrap-resume.git"
@@ -32,7 +35,8 @@
         "express": "^4.16.3",
         "jquery": "3.3.1",
         "nodemon": "^1.18.4",
-        "package.json": "^2.0.1"
+        "package.json": "^2.0.1",
+        "socket.io": "^2.1.1"
     },
     "devDependencies": {
         "browser-sync": "2.24.7",
