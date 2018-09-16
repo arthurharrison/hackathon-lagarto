@@ -20,6 +20,9 @@
     $('.navbar-collapse').collapse('hide');
   });
 
+  readTask();
+
+
   // Activate scrollspy to add active class to navbar items on scroll
   $('body').scrollspy({
     target: '#sideNav'
@@ -41,7 +44,14 @@ var config = {
   messagingSenderId: "669334833240"
 };
 firebase.initializeApp(config);
-
 var d = new Date();
 var t = d.getTime();
 var counter = t;
+
+function readTask(){
+  var ubs = firebase.database().ref("paciente/223957");
+  ubs.on("child_added", function(data){
+    var value = data.val();
+    console.log(value.nome);
+  });  
+}
