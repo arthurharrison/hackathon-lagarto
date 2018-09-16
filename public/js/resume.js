@@ -19,20 +19,17 @@
   $('.js-scroll-trigger').click(function() {
     $('.navbar-collapse').collapse('hide');
   });
-
-  readTask();
-
-
   // Activate scrollspy to add active class to navbar items on scroll
   $('body').scrollspy({
     target: '#sideNav'
-  });
+   });
 
 })(jQuery); // End of use strict
 
 $('#sobre').click(function () {
   $("#multiCollapseExample1").collapse("toggle");
 });
+
 
 // Initialize Firebase
 var config = {
@@ -44,14 +41,27 @@ var config = {
   messagingSenderId: "669334833240"
 };
 firebase.initializeApp(config);
+var db = firebase.database();
 var d = new Date();
 var t = d.getTime();
 var counter = t;
+document.getElementById("form").addEventListener("submit", (e)=>{  
+  var cns = document.getElementById("inputCns").value;
+  e.preventDefault();
+  form.reset();
+  
+  readTask(cns);
+});
 
-function readTask(){
-  var ubs = firebase.database().ref("paciente/223957");
-  ubs.on("child_added", function(data){
-    var value = data.val();
-    console.log(value.nome);
+function readTask(cns){
+  var paciente = firebase.database().ref("paciente/");
+  paciente.on("child_added", function(data){
+      let valueP = data.val();
+      var cnes = valueP.cnes;
+      var ubs = firebase.database().ref("ubs/");
+      ubs.on("child_added", function(data){
+        let valueU = data.val();
+        console.log(valueU.nome);
+      });      
   });  
 }

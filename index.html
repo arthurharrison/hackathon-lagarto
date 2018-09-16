@@ -240,11 +240,13 @@
       <h2 class="mb-0">Seu Posto de Saúde</h2>
       <div class="form-row">
         <div class="form-group col-md-4">
-          <label for="inputCns">Cartão Nacional da Saúde (CNS)</label>
-          <input type="text" class="form-control" id="inputCidade" placeholder="Insira seu CNS">
-          <button type="submit" class="btn btn-primary mt-4">Buscar</button>
-        </div>
-        <div class="form-group col-md-4 offset-md-4">
+          <form id="form">
+            <label for="inputCns">Cartão Nacional da Saúde (CNS)</label>
+            <input type="text" class="form-control" id="inputCns" placeholder="Insira seu CNS">
+            <button id="submit" type="submit" class="btn btn-primary mt-4">Buscar</button>
+          </form>
+          </div>
+        <!-- <div class="form-group col-md-4 offset-md-4">
           <label for="inputCns">Cartão Nacional da Saúde (CNS)</label>
           <input type="text" class="form-control" id="inputCidade" placeholder="Insira seu CNS">
         </div>
@@ -266,7 +268,7 @@
         <div class="offset-md-8 col-md-4">
           <label for="inputCns">Cartão Nacional da Saúde (CNS)</label>
           <input type="text" class="form-control" id="inputCidade" placeholder="Insira seu CNS">
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -365,6 +367,7 @@
 </div>
 
     <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+
      <script src="js/screen.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
