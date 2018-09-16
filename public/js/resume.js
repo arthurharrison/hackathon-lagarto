@@ -61,7 +61,13 @@ function readTask(cns){
       var ubs = firebase.database().ref("ubs/");
       ubs.on("child_added", function(data){
         let valueU = data.val();
-        console.log(valueU.nome);
+        let nome = valueU.nome;
+        let bairro = valueU.Bairro;
+        let travessa = valueU.Travessa;
+        // console.log(valueU.nome);
+        document.getElementById("ubsNome").innerHTML = "Posto de saúde: "+ nome;
+        document.getElementById("ubsBairro").innerHTML = "Bairro: "+ bairro;
+        document.getElementById("ubsTra").innerHTML = "Rua: "+ travessa;
       });      
   });  
 }

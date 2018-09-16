@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Portal de Assitência a Saúde</title>
+    <title>Portal de Assitência à Saúde</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#inicio">Inicio</a>
+              <a class="nav-link js-scroll-trigger" href="#inicio">Início</a>
           </li>
           <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#necessidade">Níveis de Atenção</a>
@@ -68,7 +68,7 @@
               </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience">Seu Posto de Saúde</a>
+            <a class="nav-link js-scroll-trigger" href="#experience">Meu Posto de Saúde</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#faq">Perguntas Frequentes</a>
@@ -239,7 +239,7 @@
   
   <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
     <div class="my-auto">
-      <h2 class="mb-0">Seu Posto de Saúde</h2>
+      <h2 class="mb-0">Meu Posto de Saúde</h2>
       <div class="form-row">
         <div class="form-group col-md-4">
           <form id="form">
@@ -247,6 +247,10 @@
             <input type="text" class="form-control" id="inputCns" placeholder="Insira seu CNS">
             <button id="submit" type="submit" class="btn btn-primary mt-4">Buscar</button>
           </form>
+          <h4><label id="ubsNome"></label></h4>
+          <h5><label id="ubsBairro"></label></h5>
+          <h5><label id="ubsTra"></label></h5>
+
           </div>
         <!-- <div class="form-group col-md-4 offset-md-4">
           <label for="inputCns">Cartão Nacional da Saúde (CNS)</label>
@@ -254,7 +258,6 @@
         </div>
       </div>
       <div class="row">
-          <div class="card-body" id="cardBox"></div>
           <div class="offset-md-8 col-md-4">
             <label for="inputCns">Cartão Nacional da Saúde (CNS)</label>
             <input type="text" class="form-control" id="inputCidade" placeholder="Insira seu CNS">
