@@ -34,6 +34,9 @@
         "nodemon": "^1.18.4",
         "package.json": "^2.0.1"
     },
+    "scripts" : {
+        "start": "node app"
+    }
     "devDependencies": {
         "browser-sync": "2.24.7",
         "browser-sync-spa": "~1.0.3",
