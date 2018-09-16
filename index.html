@@ -48,7 +48,7 @@
               <a class="nav-link js-scroll-trigger" href="#mapa">Mapa</a>
           </li>
           <li class="nav-item">
-            <a id='sobre' class="nav-link js-scroll-trigger" href='#about'>Sobre</a>
+            <a id='sobre' class="nav-link js-scroll-trigger" href='#about'>Sobre as Unidades</a>
               <div class="collapse multi-collapse" id="multiCollapseExample1">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -71,7 +71,7 @@
             <a class="nav-link js-scroll-trigger" href="#experience">Seu Posto de Saúde</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#faq">F.A.Q.</a>
+            <a class="nav-link js-scroll-trigger" href="#faq">Perguntas Frequentes</a>
             <div>
               
             </div>
@@ -108,24 +108,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script type="text/javascript">
-      var socket = io.connect();
-      $("form#chat").submit(function(e) {
-          e.preventDefault();
-          socket.emit("send message",  $(this).find("#msg_text").val(), function() {
-              $("form#chat #msg_text").val("");
-          });
-      });
-
-      socket.on('chat message', function(msg){
-        //handle the message however you would like
-        $('.cHistory').append($('<p />').text(msg));
-
-      });
-
-      socket.on("update messages", function(msg){
-        var final_message = $("<p />").text(msg);
-        $(".cHistory").append(final_message);
-      });
+    
     </script>
 
 <div class="container-fluid p-0">
@@ -145,7 +128,7 @@
       <img src="img/img.png" class="img-fluid " alt="Responsive image">
     </section>
 
-    
+    <hr class="mb-0">
 
     
         
@@ -167,7 +150,7 @@
         </div>
       </section>
     
-    <hr class="m-0">
+    
           
         
         
@@ -273,7 +256,92 @@
 
   <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="faq">
     <div class="my-auto">
-      <h2 class="mb-5">F.A.Q.</h2>
+      <h2 class="mb-5">Perguntas Frequentes</h2>
+      <div id="accordion">
+          <div class="card">
+            <div class="pointer-cursor" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Quais são as atribuições dos Agentes Comunitários de Saúde?
+                </button>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                  <p>As atribuições dos Agentes Comunitários de Saúde se inserem no escopo das ações da Atenção Básica que orienta-se
+                  pelos princípios e diretrizes do SUS, a partir dos quais assume funções e características específicas.
+                  Considera as pessoas em sua singularidade e inserção sociocultural, buscando produzir a atenção integral,
+                  por meio da promoção da saúde, da prevenção de doenças e agravos, do diagnóstico, do tratamento, da reabilitação e
+                  da redução de danos ou de sofrimentos que possam comprometer sua autonomia.</p>
+                  <p>O número de ACS por equipe deverá ser definido de acordo com base populacional (critérios demográficos,
+                    epidemiológicos e socioeconômicos), conforme legislação vigente. O ACS deve realizar as ações previstas nas
+                    regulamentações vigentes e na atual Política Nacional de Atenção Básica, o anexo XXII da Portaria de Consolidação
+                    n° 2, de 28 de Setembro de 2017, e ter uma microárea sob sua responsabilidade, cuja população não ultrapasse 750 pessoas.</p>
+                  <p>Assim, a atividade do ACS deve se dar pela lógica do planejamento do processo de trabalho a partir das
+                    necessidades do território, com priorização para população com maior grau de vulnerabilidade e de risco
+                    epidemiológico. Esta atuação em ações básicas de saúde deve visar à integralidade do cuidado no território,
+                    além de desenvolver ações como cadastrar, preencher e informar os dados através do Sistema de Informação em
+                    Saúde para a Atenção Básica vigente.</p>
+                  
+                  <p>É permitido ao ACS desenvolver outras atividades nas Unidades Básicas de Saúde, desde que vinculadas às
+                  atribuições acima.</p>
+                  
+                  <p>Para além das informações supracitadas,<a style='text-decoration: underline;' href="http://bvsms.saude.gov.br/bvs/saudelegis/gm/2016/prt0204_17_02_2016.html">clique aqui</a> para ter acesso a Portaria n° 204, de 17 DE FEVEREIRO DE 2016, e texto da mesma, que dispõe sobre o assunto.</p> 
+                  
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="pointer-cursor" id="headingThree">
+              <h5 class="mb-0">
+                <button class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Como funciona o Programa Brasil Sorridente?
+                </button>
+              </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+               <p>No site da Sala de Apoio à Gestão Estratégica do Ministério da Saúde, na aba Redes e Programas, no ícone: Saúde Mais
+                Perto de Você – Atenção Básica, temos algumas informações sobre a cobertura do Brasil Sorridente na aba “Brasil Sorridente
+                – Equipes de Saúde Bucal” e “Centro de Especialidades Odontológicas (CEO)/ Prótese Dentária” </p>
+              <p>Segue o link do site de Apoio à Gestão Estratégica do Ministério da Saúde: <a style='text-decoration: underline;' href="http://sage.saude.gov.br/#">http://sage.saude.gov.br/#</a></p>
+              <p>As principais linhas de ação da Política Nacional de Saúde Bucal – Brasil Sorridente são:</p>
+              <p>1. Reorganização da Atenção Básica em saúde bucal, principalmente com a implantação das Equipes de Saúde Bucal na Estratégia Saúde da Família;</p>
+              <p>2. Ampliação e qualificação da Atenção Especializada, em especial com a implantação de Centros de Especialidades Odontológicas e Laboratórios Regionais de Próteses Dentárias. Na Atenção Especializada encontra-se também a Assistência Hospitalar. </p>
+              <p>Na página do Brasil Sorridente no Portal da Saúde do Departamento de Atenção Básica do Ministério da Saúde, é possível ter acesso às informações de maneira mais detalhada: <a style='text-decoration: underline;' href="http://dab.saude.gov.br/portaldab/ape_brasil_sorridente.php">http://dab.saude.gov.br/portaldab/ape_brasil_sorridente.php<a></a></p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+              <div class="pointer-cursor" id="headingFour">
+                <h5 class="mb-0">
+                  <button class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+                    O que é doença crônica?
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="card-body">
+                    É toda doença ou lesão que atinge estado prolongado ou irreversível, sujeita ao aparecimento de complicações e
+                    períodos de manifestação aguda dos sintomas. Exemplos: diabetes em estado avançado, câncer, insuficiência grave do coração, etc.
+                </div>
+              </div>
+          </div>
+          <div class="card">
+              <div class="pointer-cursor" id="headingFive">
+                <h5 class="mb-0">
+                  <button class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
+                    O que são doenças congênitas?
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                <div class="card-body">
+                    São doenças e/ou deformidades com a qual a pessoa nasce e com manifestações aguda dos sintomas a qualquer tempo.
+                </div>
+              </div>
+          </div>
+        </div>
   </section>
 </div>
 
